@@ -31,7 +31,7 @@ angular.module('todoApp', ['ionic','todoApp.controllers','todoApp.services'])
             controller:'TodoEditController',
             templateUrl:'views/edit-todo.html'
         }).state('takePicture',{
-            url:'/picture/take/:id/:content',
+            url:'/picture/take/:content',
             controller:'takePictureController',
             templateUrl:'views/take-picture.html'
         });
