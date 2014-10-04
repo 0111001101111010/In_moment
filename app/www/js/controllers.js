@@ -10,7 +10,7 @@ angular.module('todoApp.controllers',[]).controller('TodoListController',['$scop
     $scope.onItemDelete=function(item){
         Todo.delete(item.objectId);
         $scope.items.splice($scope.items.indexOf(item),1);
-    }
+    };
 
 }]).controller('TodoCreationController',['$scope','Todo','$state',function($scope,Todo,$state){
 
@@ -20,7 +20,7 @@ angular.module('todoApp.controllers',[]).controller('TodoListController',['$scop
         Todo.create({content:$scope.todo.content}).success(function(data){
             $state.go('todos');
         });
-    }
+    };
 
 
 }]).controller('TodoEditController',['$scope','Todo','$state','$stateParams',function($scope,Todo,$state,$stateParams){
@@ -41,5 +41,8 @@ angular.module('todoApp.controllers',[]).controller('TodoListController',['$scop
         Todo.edit($scope.todo.id,{content:$scope.todo.content}).success(function(data){
             $state.go('todos');
         });
+    };
+    $scope.create=function(){
+      $state.go('todos');
     };
 }]);
