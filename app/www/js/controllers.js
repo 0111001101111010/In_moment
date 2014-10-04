@@ -42,9 +42,6 @@ angular.module('todoApp.controllers',[]).controller('TodoListController',['$scop
             $state.go('todos');
         });
     };
-    $scope.create=function(){
-      $state.go('todos');
-    };
     $scope.takePic = function() {
      var options =   {
          quality: 50,
